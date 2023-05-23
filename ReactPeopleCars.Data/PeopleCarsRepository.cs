@@ -50,8 +50,10 @@ namespace ReactPeopleCars.Data
             using var context = new PeopleCarsDataContext(_connectionString);
             //var carsToDelete = context.Cars.Where(c => c.PersonId == personId);
             //context.Cars.RemoveRange(carsToDelete);
-            context.Database.ExecuteSqlInterpolated($"DELETE FROM Cars WHERE PersonId = {personId}");
             //context.SaveChanges();
+
+            context.Database.ExecuteSqlInterpolated($"DELETE FROM Cars WHERE PersonId = {personId}");
+            
         }
     }
 }

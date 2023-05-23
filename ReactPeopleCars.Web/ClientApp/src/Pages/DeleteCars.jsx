@@ -12,7 +12,7 @@ class DeleteCars extends React.Component {
 
     componentDidMount = async () => {
         const { personId } = this.props.match.params;
-        const { data } = await axios.get(`/api/peoplecars/getcars?personId=${personId}`);
+        const { data } = await axios.get(`/api/peoplecars/getcars`, { params: { personId } });
         this.setState({ cars: data });
     }
 
